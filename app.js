@@ -13,7 +13,9 @@ const users           = require('./routes/users');
 const auth            = require('./routes/auth');
 const dashboard       = require('./routes/dashboard');
 
+//Conection to DB
 mongoose.connect('mongodb://localhost/mytripbd');
+
 
 var app = express();
 // view engine setup
