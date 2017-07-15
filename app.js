@@ -12,14 +12,17 @@ const index           = require('./routes/index');
 const users           = require('./routes/users');
 const auth            = require('./routes/auth');
 const dashboard       = require('./routes/dashboard');
+const activity        = require('./routes/activity');
+
+var app = express();
 
 //Conection to DB
 mongoose.connect('mongodb://localhost/mytripbd');
 
 
-var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 app.set("layout", "partials/main-layout");
@@ -30,8 +33,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/', activity);
 app.use('/', index);
 app.use('/', dashboard);
 app.use('/', auth);
