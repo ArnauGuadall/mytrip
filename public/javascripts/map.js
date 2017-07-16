@@ -1,21 +1,22 @@
-var geocoder;
+// Google Maps API
+
+var geocoder = new google.maps.Geocoder();
 var map;
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var locations = [];
+var orderCount = 0;
 
-var addNewLocationArray = [];
+// IronhackBCN Location by default 
+var map = new google.maps.Map(document.getElementById('map'), {
+  zoom: 10,  
+  center: new google.maps.LatLng(41.3977381, 2.090471916),
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+});
 
 function initialize() {  
 
   directionsDisplay = new google.maps.DirectionsRenderer();
-
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 10,
-    // IronhackBCN Location by default 
-    center: new google.maps.LatLng(41.3977381, 2.090471916),
-    mapTypeId: google.maps.MapTypeId.ROADMAP
-  });
 
   directionsDisplay.setMap(map);
 
@@ -61,8 +62,6 @@ function initialize() {
     // End
   } else {
 
-    console.log("locations are empty!!!");
-
     if (navigator.geolocation) {
 
       navigator.geolocation.getCurrentPosition(function (position) {
@@ -81,32 +80,25 @@ function initialize() {
       console.log('Browser does not support geolocation.');
     }
   }
+    
+}
 
-  
-
-  //create an order of searched locations and execute the geocodeAddres function
-  orderCount = 1;
-  
-  document.getElementById('submit').addEventListener('click', function() {
+// waits until the user clicks the button and execute the geocodeAddres function
+document.getElementById('submit').addEventListener('click', function() {
     geocodeAddress(geocoder, map);
-  });
-  //  
+  }); 
 
-  // GEOCODE Get the input from address and find a place with that name and push it to an array
+// GEOCODE Get the input from address and find a place with that name and push it to an array
   function geocodeAddress(geocoder, resultsMap) {
-
-    var geocoder = new google.maps.Geocoder();
+    
 	  var address = document.getElementById('address').value;
 	  
 	  geocoder.geocode({'address': address}, function(results, status) {
 	    if (status === 'OK') {
-
-        
-              
+	      resultsMap.setCenter(results[0].geometry.location);
 	      var marker = new google.maps.Marker({
 	        map: resultsMap,
-          position: results[0].geometry.location,          
-          title: "First search!"
+	        position: results[0].geometry.location
         });        
 
         var lat = results[0].geometry.location.lat()
@@ -117,23 +109,8 @@ function initialize() {
         );
 
         orderCount++;
-
-        resultsMap.setCenter(results[0].geometry.location);
-
-        // var myMarker = new google.maps.Marker({
-        //   position: {
-        //     lat: lat, 
-        //     lng: lng
-        //   },
-        //   map: map,
-        //   title: "First search!"
-        // });
-
-        
-
-        
-
-        
+        console.log("The orderCount is: " + orderCount);
+    
 	    } else {
 	      alert('Geocode was not successful for the following reason: ' + status);
       }
@@ -144,10 +121,5 @@ function initialize() {
     console.log(locations);
   } 
   //End GEOCODE
-
-}
-
-
-
+  
 google.maps.event.addDomListener(window, 'load', initialize);
-
