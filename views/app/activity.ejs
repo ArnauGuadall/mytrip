@@ -14,21 +14,52 @@
       <a href="/logout">Log Out</a>
     </nav>
 
-    <input type="date" id="datePicker"><br><br>
+    <div class="row">
+      <div class="col-md-4">
+        <form action="/activity" method="post">
+
+          <label for="ending-time">Starting time</label>
+          <input type="time" name="ending-time" />
+          <label for="ending-time">Ending time</label>
+          <input type="time" name="ending-time" /><br>
+
+          <label for="category">Category</label><br>
+          <input type="radio" name="category" value="food"> Food <br>
+          <input type="radio" name="category" value="accomodation"> Accomodation<br>
+          <input type="radio" name="category" value="transport"> Transport <br>
+          <input type="radio" name="category" value="activities"> Activities <br>
+          <input type="radio" name="category" value="other"> Other <br>
+
+          <label for="price">Price</label>
+          <input type="number" name="price"><br>
+
+          <textarea rows="4" cols="50">
+            Some text
+          </textarea>
+          
+        </form>
+
+        <input id="address" type="" name="address" placeholder="address">
+        <input id="submit" type="submit" name="" value="Geocode">
+
+      </div>
+
+      <div class="col-md-8">      
+        <div id="map"></div>
+      </div>
+
+    </div>
     
-    <input id="address" type="" name="address" placeholder="address">
-		<input id="submit" type="submit" name="" value="Geocode">
     
-    <div id="map"></div>
-    <script>
-      // $(document).ready( function() {
-      //     $('#datePicker').val(new Date().toDateInputValue());
-      // });
-    </script>
-  
+    
+    
+
+    
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW0Xx6VL6pf9pvNc3Qs12m3nnl5soGQAI&libraries=places"async defer></script>    
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/javascripts/map.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/map.js"></script>    
 
   </body>
 </html>
