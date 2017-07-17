@@ -13,16 +13,22 @@
       <a href="/login">Login In</a> |
       <a href="/logout">Log Out</a>
     </nav>
+
+    <input type="date" id="datePicker"><br><br>
+    
     <input id="address" type="" name="address" placeholder="address">
 		<input id="submit" type="submit" name="" value="Geocode">
-
+    
     <div id="map"></div>
-
-
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key="+key+"&sensor=false&libraries=places&callback=initMap" ></script>    
+    <script>
+      // $(document).ready( function() {
+      //     $('#datePicker').val(new Date().toDateInputValue());
+      // });
+    </script>
+  
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW0Xx6VL6pf9pvNc3Qs12m3nnl5soGQAI&libraries=places"async defer></script>    
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/javascripts/map.js"></script>
-    
 
   </body>
 </html>
