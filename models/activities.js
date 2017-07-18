@@ -4,7 +4,6 @@ const Schema    = mongoose.Schema;
 
 const activitySchema = new Schema({
   date: Date,
-  hour: String,
   location: String,
   latitude: Number,
   longitude: Number,
@@ -13,9 +12,9 @@ const activitySchema = new Schema({
   price: Number
 });
 
-const Day = mongoose.model("Day", activitySchema);
+const Activity = mongoose.model("Activity", activitySchema);
 
-module.exports = Day;
+module.exports = Activity;
 
 
 

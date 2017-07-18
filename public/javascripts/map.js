@@ -49,6 +49,9 @@ function initialize() {
   // waits until the user clis the button and execute the geocodeAddres function
   document.getElementById('submit').addEventListener('click', function () {
     geocodeAddress(geocoder, map);
+
+    
+
   });
 
   // GEOCODE Get the input from address and find a place with that name and push it to an array
@@ -77,6 +80,30 @@ function initialize() {
         addingWayPoints()
 
         orderCount++;
+
+        console.log("weWAEWAdWAdd");
+        // e.preventDefault();
+        $.ajax({
+            global: false,
+            type: 'POST',
+            url: '/activity', // missing quotes  
+            dataType: 'html',
+            data: {
+                date: $("#date").val(),                
+                category: $('input[name="category"]:checked').val(),
+                price: $("#price").val(),
+                notes: $("#notes").val(),
+                location_name: address,
+                lat: lat,
+                lng: lng,            
+            },
+            success: function (result) {
+                // console.log(result);
+            },
+            error: function (request, status, error) {
+                serviceError();
+            }
+        });
 
       } else {
         alert('Geocode was not successful for the following reason: ' + status);
@@ -112,3 +139,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 $(document).ready(function () {
   initialize()
 })
+
+
+
+
