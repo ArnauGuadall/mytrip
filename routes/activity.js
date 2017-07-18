@@ -1,5 +1,4 @@
 //
-require('dotenv').config()
 const express   = require('express');
 const Activity  = require("../models/activities");
 const router    = express.Router();
@@ -9,16 +8,23 @@ const router    = express.Router();
 
 /* GET activities. */
 router.get('/activity', (req, res, next) => {
-  res.render('app/activity');
+
+  Activity.find({}, function(err, activities){
+      if(err){
+        console.log(err);
+      } else{
+          res.render('app/activity', {activities});
+          console.log('retrieved list of activities', activities);
+      }
+  })
+
 });
 
 
 router.post('/activity', (req, res, next) => {
   // tripId that is selected
 
-  // console.log(req.body);
-
-  const newActivity = new Activity ({
+  var newActivity = new Activity ({
       date: req.body.date,
       location: req.body.location_name,
       latitude: req.body.lat,
@@ -28,12 +34,14 @@ router.post('/activity', (req, res, next) => {
       price: req.body.price
     });
     
-    console.log(newActivity);
+    console.log("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww", newActivity);
 
-    newActivity.save((err) => {
+    newActivity.save((err,doc) => {
 
       // Trip.findByIdAndUpdate(push newActivity.id) if err else 
-      res.redirect("/activity");
+      console.log("doooooc", doc);
+      // res.send(doc);
+      res.json({data:doc});
     });
 
   

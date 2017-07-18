@@ -51,6 +51,20 @@
         <div id="map"></div>
       </div>
 
+      <div class="col-md-12">
+      
+        <% activities.forEach(function(activity) { %>
+            <li><%= activity.category %> </li>
+        <% }); %>
+        
+      </div>
+
+      <div id="newRecord">
+      <%= data %>
+
+      
+      </div>
+
     </div>
     
     

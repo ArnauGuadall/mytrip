@@ -97,13 +97,24 @@ function initialize() {
                 lat: lat,
                 lng: lng,            
             },
-            success: function (result) {
+            success: function (posts) {
                 // console.log(result);
+              console.log("pooooooooooooooooost",posts)
+
+                // for( var item in posts ) {
+                //   $('#newRecord').append('<div>'+item.lat+'</div>');
+                // }
+              
+
+
+
+              // $("#newRecord").append("<strong>Hello</strong>")
             },
             error: function (request, status, error) {
                 serviceError();
             }
-        });
+        }); 
+          
 
       } else {
         alert('Geocode was not successful for the following reason: ' + status);

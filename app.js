@@ -1,24 +1,25 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const path = require('path');
-const favicon = require('serve-favicon');
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const session = require('express-session');
-const expressLayouts = require('express-ejs-layouts');
-const MongoStore = require('connect-mongo')(session);
-const index = require('./routes/index');
-const User = require('./models/user');
-const trip = require('./routes/trip');
-const addtrip = require('./routes/addtrip');
-const auth = require('./routes/auth');
-const dashboard = require('./routes/dashboard');
-const bcrypt = require("bcrypt");
-const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
-const flash = require("connect-flash");
-const activity        = require('./routes/activity');
+const express               = require('express');
+const mongoose              = require('mongoose');
+const path                  = require('path');
+const favicon               = require('serve-favicon');
+const logger                = require('morgan');
+const cookieParser          = require('cookie-parser');
+const bodyParser            = require('body-parser');
+const session               = require('express-session');
+const expressLayouts        = require('express-ejs-layouts');
+const MongoStore            = require('connect-mongo')(session);
+const bcrypt                = require("bcrypt");
+const passport              = require("passport");
+const LocalStrategy         = require("passport-local").Strategy;
+const flash                 = require("connect-flash");
+const User                  = require('./models/user');
+const index                 = require('./routes/index');
+const trip                  = require('./routes/trip');
+const addtrip               = require('./routes/addtrip');
+const auth                  = require('./routes/auth');
+const dashboard             = require('./routes/dashboard');
+const activity              = require('./routes/activity');
+const app                   = express();
 
 mongoose.connect('mongodb://localhost/mytripdb');
 
@@ -97,6 +98,7 @@ app.use(passport.session());
 
 
 app.use('/', index);
+app.use('/', activity);
 app.use('/', dashboard);
 app.use('/', auth);
 app.use('/', trip);
