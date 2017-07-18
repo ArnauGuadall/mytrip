@@ -1,19 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+<% if (user) { %>
+    <div>
+        <h1>Hi there,
+            <%= user.username %>
+        </h1>
+        <h1>Your trips:</h1>
+        <ul>
+            <% for (var i=0; i<user.trips.length; i++) {%>
+                <li>
+                    <%= user.trips[i] %>
+                </li>
+                <%}%>
+        </ul>
 
-    <nav>
-      <a href="/">Index</a> |    
-      <a href="/dashboard">Dashboard</a> |
-      <a href="/login">Login In</a> |
-      <a href="/logout">Log Out</a>
-    </nav>
-
-  </body>
-</html>
+        <nav>
+            <a href="/">Index</a> |
+            <a href="/trip">My trips</a>|
+            <a href="/addtrip">Add trip</a>|
+            <a href="/logout">Log Out</a>
+        </nav>
+    </div>
+    <% } %>
