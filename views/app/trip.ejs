@@ -1,0 +1,12 @@
+<% if (user) { %>
+    <div>
+        <h1>Welcome to your trips,
+            <%= user.username %>
+        </h1>
+
+        <nav>
+            <a href="/">Index</a> |
+            <a href="/logout">Log Out</a>
+        </nav>
+    </div>
+    <% } %>
