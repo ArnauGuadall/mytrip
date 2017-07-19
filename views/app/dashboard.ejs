@@ -1,24 +1,23 @@
-<% if (user) { %>
-    <div>
-        <h1>Hi there,
-            <%= user.username %>
-        </h1>
-        <h1>Your trips:</h1>
-        <ul>
 
-            <% for (var i=0; i<user.trips.length; i++) {%>
-                <li>
-                    <a href="/trip/<%= user.trips[i] %>/activities">
-                        <%= user.trips[i] %>
-                    </a>
-                </li>
-                <%}%>
-        </ul>
+<div class="dashboard">
+    <h1>Hi there,
+        <%= user.username %>
+    </h1>
+    <h1>My trips:</h1>
+    <ul>
 
-        <nav>
-            <a href="/">Index</a> |
-            <a href="/addtrip">Add trip</a>|
-            <a href="/logout">Log Out</a>
-        </nav>
-    </div>
-    <% } %>
+        <% for (var i=0; i<usertrips[0].trips.length; i++) {%>
+            <li>
+                <a href="/trip/<%= usertrips[0].trips[i]._id %>/activities">
+                    <%= usertrips[0].trips[i].tripname %>
+                </a>
+            </li>
+        <%}%>
+        
+    </ul>
+
+    <form action="/addtrip">
+        <input type="submit" value="Add a new trip" />
+    </form>
+
+</div>

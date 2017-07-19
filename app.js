@@ -47,6 +47,7 @@ app.use(session({
     saveUninitialized: true
 }));
 
+
 passport.serializeUser((user, cb) => {
     cb(null, user.id);
 });
@@ -57,22 +58,6 @@ passport.deserializeUser((id, cb) => {
         cb(null, user);
     });
 });
-
-// passport.use(new LocalStrategy((username, password, next) => {
-//     User.findOne({ username }, (err, user) => {
-//         if (err) {
-//             return next(err);
-//         }
-//         if (!user) {
-//             return next(null, false, { message: "Incorrect username" });
-//         }
-//         if (!bcrypt.compareSync(password, user.password)) {
-//             return next(null, false, { message: "Incorrect password" });
-//         }
-
-//         return next(null, user);
-//     });
-// }));
 
 app.use(flash());
 passport.use(new LocalStrategy({
@@ -96,6 +81,10 @@ passport.use(new LocalStrategy({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(function(req, res, next) {
+  res.locals.user = req.session.user;
+  next();
+});
 
 app.use('/', activity);
 app.use('/', index);

@@ -2,17 +2,30 @@
 <html lang="en">
 
 <head>
-    <% include ../partials/header %>
-
-        <title>Mytrip</title>
+    <% include header %>
 </head>
 
 <body>
-    <div id="container">
-        <img src="/images/mytriplogo.png" class="header-logo" style="width: 140px;">
+    <% if (user) { %>
+        <nav>
+            <a href="/">Index</a> |
+            <a href="/dashboard">Dashboard</a>|
+            <a href="/logout">Log Out</a>
+        </nav>
 
-        <%- body %>
-    </div>
+        <% } else { %>
+            <nav>
+                <a href="/">Index</a> |
+                <a href="/login">Login</a>|
+                <a href="/signup">Signup</a>
+            </nav>
+            <% } %>
+
+                <div id="container">
+                    <%- body %>
+                </div>
 </body>
+
+<% include footer %>
 
 </html>
