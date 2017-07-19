@@ -6,7 +6,7 @@ const tripSchema = new Schema({
     tripname: String,
     num_days: Number,
     activities: [{ type: Schema.Types.ObjectId, ref: 'Activity' }],
-    users: [{ type: Schema.Types.ObjectId, ref: 'User' }]
+    users: [{ type: String, ref: 'User' }]
 });
 
 const Trip = mongoose.model("Trip", tripSchema);

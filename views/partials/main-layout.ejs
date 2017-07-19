@@ -6,24 +6,46 @@
 </head>
 
 <body>
-    <% if (user) { %>
-        <nav>
-            <a href="/">Index</a> |
-            <a href="/dashboard">Dashboard</a>|
-            <a href="/logout">Log Out</a>
-        </nav>
+    <nav class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
 
-        <% } else { %>
-            <nav>
-                <a href="/">Index</a> |
-                <a href="/login">Login</a>|
-                <a href="/signup">Signup</a>
-            </nav>
-            <% } %>
+        <div class="container">
+            <a class="navbar-brand" href="/">myTrip</a>
+            <div class="collapse navbar-collapse" id="navbarExample">
+                <ul class="navbar-nav ml-auto">
 
-                <div id="container">
-                    <%- body %>
-                </div>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <% if (user) { %>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/dashboard">Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">logout</a>
+                        </li>
+
+                        <% } else { %>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login">Login</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/signup">Signup</a>
+                            </li>
+
+                            <% } %>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="container">
+        <%- body %>
+    </div>
 </body>
 
 <% include footer %>

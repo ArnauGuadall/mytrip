@@ -19,6 +19,7 @@ router.post("/addtrip", (req, res, next) => {
     const tripname = req.body.tripname;
     const num_days = req.body.num_days;
     const userid = req.user._id;
+    const users = req.body.users;
 
     var newTrip = new Trip({
         tripname: tripname,
@@ -32,10 +33,11 @@ router.post("/addtrip", (req, res, next) => {
                 errorMessage: "Something went wrong"
             });
         } else {
-
+            newTrip.users.push(users)
             User.findById(userid, (err, user) => {
                 console.log('newtrip id: ' + newTrip._id);
                 user.trips.push(newTrip._id);
+                User.find()
                 user.save();
             })
             res.redirect("/dashboard");
@@ -45,7 +47,7 @@ router.post("/addtrip", (req, res, next) => {
     console.log(newTrip);
     console.log('---------');
 
-    
+
 });
 
 module.exports = router;

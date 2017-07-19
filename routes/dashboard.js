@@ -11,18 +11,17 @@ router.get("/dashboard", ensureLogin.ensureLoggedIn(), (req, res) => {
 
     // Use populate to find the tripname into Users
     User
-      .find({_id: req.user.id})
-      .populate("trips")
-      .exec((err, user) => {
-        if (err) {
-          next(err);
-          return;
-          }
+        .find({ _id: req.user.id })
+        .populate("trips")
+        .exec((err, user) => {
+            if (err) {
+                next(err);
+                return;
+            }
 
-        console.log("fucking trips", user[0].trips[0].tripname);
-        res.render('app/dashboard', {user: req.user, usertrips: user});
+            res.render('app/dashboard', { user: req.user, usertrips: user });
 
-  });
+        });
 
     // res.render("app/dashboard", { user: req.user, trip: trips });
 });
