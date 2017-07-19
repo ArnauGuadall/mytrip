@@ -7,7 +7,9 @@
         <ul>
             <% for (var i=0; i<user.trips.length; i++) {%>
                 <li>
-                    <%= user.trips[i] %>
+                    <a href="/trip/<%= user.trips[i] %>">
+                        <%= user.trips[i] %>
+                    </a>
                 </li>
                 <%}%>
         </ul>
