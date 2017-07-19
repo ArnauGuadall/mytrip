@@ -1,3 +1,4 @@
+
 const express               = require('express');
 const mongoose              = require('mongoose');
 const path                  = require('path');
@@ -96,7 +97,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-
+app.use('/', activity);
 app.use('/', index);
 app.use('/', activity);
 app.use('/', dashboard);
