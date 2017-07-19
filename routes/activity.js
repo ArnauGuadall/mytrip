@@ -22,7 +22,6 @@ router.get('/trip/:id/activities', (req, res, next) => {
           return;
           }
         res.render('app/activity', {trip});
-    // res.json({trip})
 
   });
 
@@ -43,11 +42,9 @@ router.post('/trip/:id/activities', (req, res, next) => {
       latitude: req.body.lat,
       longitude: req.body.lng,
       category: req.body.category,
-      text: req.body.text,
+      text: req.body.notes,
       price: req.body.price
     });
-    
-    console.log("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww", newActivity);
 
     newActivity.save((err,doc) => {
 
@@ -60,9 +57,7 @@ router.post('/trip/:id/activities', (req, res, next) => {
           res.json(doc);
       })
                   
-    });
-
-    
+    });    
 
 })
 
