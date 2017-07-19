@@ -5,26 +5,27 @@
     <% include head %>
 </head>
 
-<body id="page-top">
-    <% if (user) { %>    
+<body>
+    <% if (user) { %>
         <nav>
             <a href="/">Index</a> |
             <a href="/dashboard">Dashboard</a>|
             <a href="/logout">Log Out</a>
         </nav>
-    
-    <% } else { %>
-        <nav>
-            <a href="/">Index</a> |
-            <a href="/login">Login</a>|
-            <a href="/signup">Signup</a>
-        </nav>
-    <% } %>
 
-    <div id="container">        
-        <%- body %>
-    </div>
+        <% } else { %>
+            <nav>
+                <a href="/">Index</a> |
+                <a href="/login">Login</a>|
+                <a href="/signup">Signup</a>
+            </nav>
+            <% } %>
+
+                <div id="container">
+                    <%- body %>
+                </div>
 </body>
-    
-    <% include footer %>
+
+<% include footer %>
+
 </html>
