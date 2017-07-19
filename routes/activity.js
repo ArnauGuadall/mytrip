@@ -1,6 +1,7 @@
 //
 const express   = require('express');
 const Activity  = require("../models/activities");
+const Trip  = require("../models/trip");
 const router    = express.Router();
 var app = express();
 
@@ -8,22 +9,33 @@ var app = express();
 
 
 /* GET activities. */
-router.get('/activity', (req, res, next) => {
+router.get('/trip/:id/activities', (req, res, next) => {
 
-  Activity.find({}, function(err, activities){
-      if(err){
-        console.log(err);
-      } else{
-          res.render('app/activity', {activities});
-          console.log('retrieved list of activities', activities);
-      }
-  })
+  var tripid = req.params.id;
+
+  Trip
+      .findOne({_id: tripid})
+      .populate("activities")
+      .exec((err, trip) => {
+        if (err) {
+          next(err);
+          return;
+          }
+        res.render('app/activity', {trip});
+    // res.json({trip})
+
+  });
+
 
 });
 
 
-router.post('/activity', (req, res, next) => {
+router.post('/trip/:id/activities', (req, res, next) => {
   // tripId that is selected
+
+  var tripid = req.body.tripid;
+
+  console.log("tripid", tripid);
 
   var newActivity = new Activity ({
       date: req.body.date,
@@ -42,18 +54,17 @@ router.post('/activity', (req, res, next) => {
       // Trip.findByIdAndUpdate(push newActivity.id) if err else 
       console.log("doooooc", doc);
       
-      // res.send("$( '.last' ).append( '<p>"+doc+"</p>' )");
-      console.log("doooooc end");
-      res.json(doc)
+      Trip.findById(tripid, (err, trip) => {
+          trip.activities.push(doc._id); 
+          trip.save();
+          res.json(doc);
+      })
+                  
     });
 
-  
+    
+
 })
 
 
-
-
 module.exports = router;
-
-// ceate Activity -> push Activity in the trip 
-// when go trip view all the related Activity

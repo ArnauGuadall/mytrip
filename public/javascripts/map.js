@@ -81,12 +81,16 @@ function initialize() {
 
         orderCount++;
 
+        console.log('------------------------------------');
+        var refID = window.location.pathname.split("/")[2];
+        console.log('------------------------------------');        
+
         console.log("weWAEWAdWAdd");
         // e.preventDefault();
         $.ajax({
             global: false,
             type: 'POST',
-            url: '/activity', // missing quotes  
+            url: '/trip/'+refID+'/activities', // missing quotes  
             dataType: 'html',
             data: {
                 date: $("#date").val(),                
@@ -95,7 +99,8 @@ function initialize() {
                 notes: $("#notes").val(),
                 location_name: address,
                 lat: lat,
-                lng: lng,            
+                lng: lng,      
+                tripid: refID,      
             },
             success: function (post) {
                 // console.log(result);

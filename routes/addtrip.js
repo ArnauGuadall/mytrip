@@ -32,6 +32,12 @@ router.post("/addtrip", (req, res, next) => {
                 errorMessage: "Something went wrong"
             });
         } else {
+
+            User.findById(userid, (err, user) => {
+                console.log('newtrip id: ' + newTrip._id);
+                user.trips.push(newTrip._id);
+                user.save();
+            })
             res.redirect("/dashboard");
         }
     });
@@ -39,11 +45,7 @@ router.post("/addtrip", (req, res, next) => {
     console.log(newTrip);
     console.log('---------');
 
-    User.findById(userid, (err, user) => {
-        console.log('newtrip id: ' + newTrip._id);
-        user.trips.push(newTrip._id);
-        user.save();
-    })
+    
 });
 
 module.exports = router;
