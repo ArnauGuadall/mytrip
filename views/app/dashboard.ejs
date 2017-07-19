@@ -1,23 +1,49 @@
 
-<div class="dashboard">
-    <h1>Hi there,
-        <%= user.username %>
-    </h1>
-    <h1>My trips:</h1>
-    <ul>
+    
 
-        <% for (var i=0; i<usertrips[0].trips.length; i++) {%>
-            <li>
-                <a href="/trip/<%= usertrips[0].trips[i]._id %>/activities">
-                    <%= usertrips[0].trips[i].tripname %>
-                </a>
-            </li>
-        <%}%>
-        
-    </ul>
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">At Your Service</h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 text-center">
+                    <ul>
 
-    <form action="/addtrip">
-        <input type="submit" value="Add a new trip" />
-    </form>
+                        <% for (var i=0; i<usertrips[0].trips.length; i++) {%>
+                            <li>
+                                <a href="/trip/<%= usertrips[0].trips[i]._id %>/activities">
+                                    <%= usertrips[0].trips[i].tripname %>
+                                </a>
+                            </li>
+                        <%}%>
+                        
+                    </ul>
 
-</div>
+                    <form action="/addtrip">
+                        <input type="submit" value="Add a new trip" />
+                    </form>
+                </div>
+                <div class="col-lg-3 col-md-6 text-center">
+                    <div class="service-box">
+                        <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
+                        <h3>Maps Ready</h3>
+                        <p class="text-muted">Use Google maps to see what do you want to visit!</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    
+
+
+
+    
+

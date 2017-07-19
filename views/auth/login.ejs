@@ -1,21 +1,67 @@
-<h2>Login</h2>
+<nav class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
+    
+    <div class="container">
+        <a class="navbar-brand" href="#page-top">myTrip</a>
+        <div class="collapse navbar-collapse" id="navbarExample">
+            <ul class="navbar-nav ml-auto">
+                <% if (user) { %> 
 
-<form action="/login" method="POST" id="form-container" class="login">
-    <label for="username">Username</label>
-    <input type="text" name="username" placeholder="Your username">
-    <br><br>
-    <label for="password">Password</label>
-    <input type="password" name="password" placeholder="Your password">
-    <br><br>
-    <button>Sign in</button>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">logout</a>
+                    </li>
 
-    <p class="account-message">
-        Don't have an account? <a href="/signup">Sign up</a>
+                <% } else { %>
 
-        <% if (typeof(errorMessage) !== "undefined") { %>
-            <div class="error-message">
-                <%= errorMessage %>
-            </div>
-            <% } %>
-    </p>
-</form>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">Signup</a>
+                    </li>
+
+                <% } %>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="masthead">
+    <div class="header-content">
+        <div class="header-content-inner">
+            <form action="/login" method="POST" id="form-container" class="login">
+                <label for="username">Username</label>
+                <input type="text" name="username" placeholder="Your username">
+                <br><br>
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Your password">
+                <br><br>
+                <button>Sign in</button>
+
+                <p class="account-message">
+                    Don't have an account? <a href="/signup">Sign up</a>
+
+                    <% if (typeof(errorMessage) !== "undefined") { %>
+                        <div class="error-message">
+                            <%= errorMessage %>
+                        </div>
+                        <% } %>
+                </p>
+            </form>
+        </div>
+    </div>
+</header>
+
+    
+
+    
+

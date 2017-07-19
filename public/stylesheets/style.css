@@ -1,6 +1,7 @@
 body {
-    padding: 50px;
+    
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    
 }
 
 a {
@@ -10,4 +11,14 @@ a {
 #map {
   height: 500px;
   width: 100%;
+}
+
+
+.navbar-shrink{
+    color: black;
+    background-color: white;
+}
+
+.navbar-collapse{
+    color: white;
 }
