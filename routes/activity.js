@@ -2,6 +2,7 @@
 const express   = require('express');
 const Activity  = require("../models/activities");
 const router    = express.Router();
+var app = express();
 
 
 
@@ -40,12 +41,15 @@ router.post('/activity', (req, res, next) => {
 
       // Trip.findByIdAndUpdate(push newActivity.id) if err else 
       console.log("doooooc", doc);
-      // res.send(doc);
-      res.json({data:doc});
+      
+      // res.send("$( '.last' ).append( '<p>"+doc+"</p>' )");
+      console.log("doooooc end");
+      res.json(doc)
     });
 
   
 })
+
 
 
 

@@ -97,18 +97,12 @@ function initialize() {
                 lat: lat,
                 lng: lng,            
             },
-            success: function (posts) {
+            success: function (post) {
                 // console.log(result);
-              console.log("pooooooooooooooooost",posts)
+              console.log("pooooooooooooooooost",JSON.parse(post))
+              post = JSON.parse(post)
 
-                // for( var item in posts ) {
-                //   $('#newRecord').append('<div>'+item.lat+'</div>');
-                // }
-              
-
-
-
-              // $("#newRecord").append("<strong>Hello</strong>")
+              $(".newRecord").append("<h1>"+post["latitude"]+"</h1>")
             },
             error: function (request, status, error) {
                 serviceError();
