@@ -65,3 +65,8 @@ form label {
     float: none;
     margin: 5px;
 }
+
+.col-xs-12.text-center:nth-child(3) {
+    margin-top: 65px;
+    color: white;
+}
