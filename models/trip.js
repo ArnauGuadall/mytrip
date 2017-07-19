@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const tripSchema = new Schema({
     tripname: String,
     num_days: Number,
-    dayID: [{ type: Schema.Types.ObjectId, ref: 'Day' }],
+    activities: [{ type: Schema.Types.ObjectId, ref: 'Activity' }],
     users: [{ type: Schema.Types.ObjectId, ref: 'User' }]
 });
 

@@ -18,7 +18,8 @@ const bcrypt = require("bcrypt");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const flash = require("connect-flash");
-const activity        = require('./routes/activity');
+const activity = require('./routes/activity');
+const app = express();
 
 mongoose.connect('mongodb://localhost/mytripdb');
 
@@ -95,7 +96,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-
+app.use('/', activity);
 app.use('/', index);
 app.use('/', dashboard);
 app.use('/', auth);

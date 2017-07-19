@@ -1,8 +1,15 @@
 <% if (user) { %>
     <div>
-        <h1>Welcome to your trip,
-            <%= user.username %>
+        <h1>
+            <%= data.tripname %>
         </h1>
+
+        <h2>
+            <%= data.num_days %> days,
+                <%= user.username %>
+        </h2>
+
+
         <nav>
             <a href="/">Index</a> |
             <a href="/logout">Log Out</a>
