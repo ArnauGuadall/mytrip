@@ -70,3 +70,19 @@ form label {
     margin-top: 65px;
     color: white;
 }
+
+.submit {
+    margin-top: 50px;
+}
+
+.radiobutton {
+    text-align: left;
+}
+
+.sizeGeoInput {
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+}
