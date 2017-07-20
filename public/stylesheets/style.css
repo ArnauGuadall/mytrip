@@ -83,6 +83,16 @@ form label {
     width: 100%;
 }
 
-textarea {
+.textarea {
     width: 100%;
+    color: black;
+}
+
+
+.activity {
+    padding: 1em;
+}
+
+.activity .activity-content-wrapper {
+    background-color: rgb(255,255,255);
 }
