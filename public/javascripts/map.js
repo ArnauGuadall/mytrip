@@ -106,15 +106,13 @@ function initialize() {
                         post = JSON.parse(post)
 
                         $(".newRecord").append("<div class='col-md-6 col-sm-12 col-xs-12 content-left'> \
-                  <p>Date: " + post["date"] + " </p> \
-                  <p>Location: " + post["location"] + " </p> \
-                  <p>Text: " + post["text"] + " </p> \
+                  <p><i class='material-icons'>event_note</i> " + post["date"] + " </p> \
+                  <p><i class='material-icons'>add_location</i> " + post["location"] + " </p> \
+                  <p><i class='material-icons'>chat</i> " + post["text"] + " </p> \
                   <div class='tag'> \
-                  awodjaowdj
-                  <p class='left'>Category: " + post["category"] + " %> </p> \
-                  <p class='left'>Category: " + post["price"] + " %> €  </p> \
-                  </div>");    
-
+                  <p class='left'><i class='material-icons'>label</i> " + post["category"] + "  </p> \
+                  <p class='left'><i class='material-icons'>monetization_on</i> " + post["price"] + " €  </p> \
+                  </div>");
                     },
                     error: function(request, status, error) {
                         serviceError();

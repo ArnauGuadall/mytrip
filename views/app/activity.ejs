@@ -4,7 +4,7 @@
 
         <div class="row">
             <div class="col-md-5">
-                <form action="/activity" method="post">
+                <form>
 
                     <div class="form-group col-md-6 col-sm-12 col-xs-12">
                         <label for="date">Date</label>
@@ -24,40 +24,44 @@
                         <input type="radio" name="category" value="Other"> Other <br>
                     </div>
 
-                    <div class="col-md-6 col-sm-12 col-xs-12">
+                    <div class="form-group col-md-6 col-sm-12 col-xs-12">
                         <label for="notes">Notes</label> <br>
                         <textarea rows="5" cols="30" id="notes" name="notes"></textarea><br><br>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <input id="address" class="sizeGeoInput" type="" name="address" placeholder="address">
+                        <input id="submit" class="sizeGeoInput" type="button" value="Geocode"><br><br>
                     </div>
 
 
                 </form>
 
-                <input id="address" class="sizeGeoInput" type="" name="address" placeholder="address">
-                <input id="submit" class="sizeGeoInput" type="submit" name="" value="Geocode">
-
+                
             </div>
 
-            <div class="col-md-7">
+            <div class="col-md-7 paddRight">
                 <div id="map"></div>
             </div>
-
-
 
             <% trip.activities.forEach(function(activity) { %>
                 <div class="col-md-6 col-sm-12 col-xs-12 content-left">
                     <p><i class="material-icons">event_note</i>
                         <%= activity.date %>
                     </p>
-                    <p><i class="material-icons">add_location</i>
+                    <p class="bigger"><i class="material-icons">add_location</i>
                         <%= activity.location %>
                     </p>
-                    <p><i class="material-icons">chat</i> Text:
+                    <p class="bigger"><i class="material-icons">chat</i> Text:
                         <%= activity.text %>
                     </p>
 
-                    <div class="tag"> 
-                        <p class="left"><i class="material-icons">label</i> <%= activity.category %> </p> 
-                        <p class="right"> <i class="material-icons">monetization_on</i> <%= activity.price %> €</p>                                                 
+                    <div class="tag">
+                        <p class="left"><i class="material-icons">label</i>
+                            <%= activity.category %>
+                        </p>
+                        <p class="right"> <i class="material-icons">monetization_on</i>
+                            <%= activity.price %> €</p>
                     </div>
                 </div>
             <% }); %>
@@ -65,16 +69,9 @@
 
                     <div class="newRecord">
 
-
-
                     </div>
 
         </div>
-
-
-
-
-
 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW0Xx6VL6pf9pvNc3Qs12m3nnl5soGQAI&libraries=places" async defer></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -83,7 +80,6 @@
         <script type="text/javascript" src="/javascripts/map.js"></script>
         <script>
         </script>
-
     </div>
 
 </header>
