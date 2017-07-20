@@ -83,16 +83,40 @@ form label {
     width: 100%;
 }
 
-.textarea {
+#notes {
     width: 100%;
     color: black;
+    float: left;
 }
 
-
-.activity {
-    padding: 1em;
+.content-left {
+    text-align: left;
+    padding: 10px 0;
+    background-color:rgba(192,192,192,0.3);
 }
 
-.activity .activity-content-wrapper {
-    background-color: rgb(255,255,255);
+.content-left p {
+    margin-left: 20px;
+}
+
+.tag{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    float: left;
+}
+
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+
+@media only screen and (max-width: 500px) {
+    .nav-link2 {
+        color: black !important;
+    }
 }
