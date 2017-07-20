@@ -1,43 +1,34 @@
+<header class="masthead">
+    <div class="header-content">
+        <div class="header-content-inner">
 
 
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">At Your Service</h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <ul>
+            <h2>My Trips</h2>
 
-                        <% for (var i=0; i<usertrips[0].trips.length; i++) {%>
-                            <li>
-                                <a href="/trip/<%= usertrips[0].trips[i]._id %>/activities">
-                                    <%= usertrips[0].trips[i].tripname %>
-                                </a>
-                            </li>
+            <div class="col-xs-12 text-center">
+                <ul class="trip-list">
+                    <% for (var i=0; i<usertrips[0].trips.length; i++) {
+                         var a = usertrips[0].trips.length;
+                         var b = a-i-1;%>
+                        <li>
+                            <a href="/trip/<%= usertrips[0].trips[b]._id %>/activities">
+                                <%= usertrips[0].trips[b].tripname %>
+                            </a>
+                        </li>
                         <%}%>
-                        
-                    </ul>
+                </ul>
 
-                    <form action="/addtrip">
-                        <input type="submit" value="Add a new trip" />
-                    </form>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                        <h3>Maps Ready</h3>
-                        <p class="text-muted">Use Google maps to see what do you want to visit!</p>
-                    </div>
-                </div>
-                
+                <form action="/addtrip">
+                    <input type="submit" value="Add a new trip" />
+                </form>
+            </div>
+
+            <div class="col-xs-12 text-center" <i class="fa fa-4x fa-paper-plane text-primary sr-icons">
+                </i>
+                <h3>Maps Ready</h3>
+                <p>Use Google maps to see what do you want to visit!</p>
+
             </div>
         </div>
-    </section>
-
-    
+    </div>
+</header>

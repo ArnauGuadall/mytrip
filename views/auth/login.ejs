@@ -1,43 +1,7 @@
-<nav class="navbar fixed-top navbar-toggleable-md navbar-light" id="mainNav">
-    
-    <div class="container">
-        <a class="navbar-brand" href="#page-top">myTrip</a>
-        <div class="collapse navbar-collapse" id="navbarExample">
-            <ul class="navbar-nav ml-auto">
-                <% if (user) { %> 
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/dashboard">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/logout">logout</a>
-                    </li>
-
-                <% } else { %>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/signup">Signup</a>
-                    </li>
-
-                <% } %>
-
-            </ul>
-        </div>
-    </div>
-</nav>
-
 <header class="masthead">
     <div class="header-content">
         <div class="header-content-inner">
+
             <form action="/login" method="POST" id="form-container" class="login">
                 <label for="username">Username</label>
                 <input type="text" name="username" placeholder="Your username">
@@ -60,8 +24,3 @@
         </div>
     </div>
 </header>
-
-    
-
-    
-
