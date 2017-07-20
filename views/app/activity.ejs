@@ -17,11 +17,11 @@
 
                     <div class="col-md-6 col-sm-12 col-xs-12 radiobutton">
                         <label for="category">Category</label><br>
-                        <input type="radio" name="category" value="food"> Food <br>
-                        <input type="radio" name="category" value="accomodation"> Accomodation<br>
-                        <input type="radio" name="category" value="transport"> Transport <br>
-                        <input type="radio" name="category" value="activities"> Activities <br>
-                        <input type="radio" name="category" value="other"> Other <br>
+                        <input type="radio" name="category" value="Food"> Food <br>
+                        <input type="radio" name="category" value="Accomodation"> Accomodation<br>
+                        <input type="radio" name="category" value="Transport"> Transport <br>
+                        <input type="radio" name="category" value="Activities"> Activities <br>
+                        <input type="radio" name="category" value="Other"> Other <br>
                     </div>
 
                     <div class="col-md-6 col-sm-12 col-xs-12">
@@ -41,41 +41,34 @@
                 <div id="map"></div>
             </div>
 
-
-
             <% trip.activities.forEach(function(activity) { %>
-                <div class="col-md-6 col-sm-12 col-xs-12 content-left" style="border: 1px solid black">
-                    <p>Date:
+                <div class="col-md-6 col-sm-12 col-xs-12 content-left">
+                    <p><i class="material-icons">event_note</i>
                         <%= activity.date %>
                     </p>
-                    <p>Category:
-                        <%= activity.category %>
-                    </p>
-                    <p>Location:
+                    <p><i class="material-icons">add_location</i>
                         <%= activity.location %>
                     </p>
-                    <p>Price:
-                        <%= activity.price %>
-                    </p>
-                    <p>Text:
+                    <p><i class="material-icons">chat</i> Text:
                         <%= activity.text %>
                     </p>
+
+                    <div class="tag">
+                        <p class="left"><i class="material-icons">label</i>
+                            <%= activity.category %>
+                        </p>
+                        <p class="right"> <i class="material-icons">monetization_on</i>
+                            <%= activity.price %> €</p>
+                    </div>
                 </div>
                 <% }); %>
 
 
                     <div class="newRecord">
 
-
-
                     </div>
 
         </div>
-
-
-
-
-
 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW0Xx6VL6pf9pvNc3Qs12m3nnl5soGQAI&libraries=places" async defer></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -84,7 +77,6 @@
         <script type="text/javascript" src="/javascripts/map.js"></script>
         <script>
         </script>
-
     </div>
 
 </header>
