@@ -110,6 +110,7 @@ function initialize() {
                   <p>Location: " + post["location"] + " </p> \
                   <p>Text: " + post["text"] + " </p> \
                   <div class='tag'> \
+                  awodjaowdj
                   <p class='left'>Category: " + post["category"] + " %> </p> \
                   <p class='left'>Category: " + post["price"] + " %> €  </p> \
                   </div>");    
