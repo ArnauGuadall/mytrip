@@ -1,9 +1,16 @@
 body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 a {
     color: #00B7FF;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
 }
 
 #map {
@@ -97,10 +104,32 @@ form label {
 .content-left {
     text-align: left;
     padding: 10px 0;
+    background-color: rgba(192, 192, 192, 0.3);
 }
 
 .content-left p {
     margin-left: 20px;
+}
+
+.tag {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    float: left;
+}
+
+.bigger {
+    height: 50px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
 }
 
 @media only screen and (max-width: 500px) {
@@ -124,4 +153,26 @@ form label {
 
 .right {
     float: right;
+}
+
+.ourmenu {
+    float: right;
+    padding-top: 15px;
+}
+
+.row {
+    margin-right: 0px!important;
+    margin-left: 0px!important;
+}
+
+.paddRight {
+    padding-right: 0px !important;
+}
+
+.space {
+    margin-top: 60px!important;
+}
+
+.navbar {
+    margin-bottom: 0px !important;
 }
