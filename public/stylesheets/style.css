@@ -176,3 +176,65 @@ form label {
 .navbar {
     margin-bottom: 0px !important;
 }
+
+footer {
+    background-color: #222;
+    border-color: #080808;
+    bottom: 0;
+    margin-bottom: 0;
+    border-width: 1px 0 0;
+    position: fixed !important;
+    width: 100%;
+    /* height: 50px; */
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-inverse .navbar-collapse {
+    border-color: #101010;
+}
+
+.navbar-left {
+    float: left!important;
+}
+
+.navbar-right {
+    float: right!important;
+}
+
+footer {
+    color: white;
+    padding: 5px 5px 0px 5px;
+}
+
+footer .nav-left,
+footer .navbar-right {
+    display: block;
+    color: white;
+}
+
+footer li {
+    display: inline-block;
+    margin: 5px 10px;
+}
+
+footer .container-footer {
+    width: 100%;
+}
+
+span.connected {
+    color: #26e026 !important;
+}
+
+span.disconnected {
+    color: #e02626 !important;
+}
+
+nav a {
+    cursor: pointer;
+}

@@ -21,6 +21,9 @@ router.post("/addtrip", (req, res, next) => {
     const userid = req.user._id;
     const users = req.body.users;
 
+
+
+
     var newTrip = new Trip({
         tripname: tripname,
         num_days: num_days,
