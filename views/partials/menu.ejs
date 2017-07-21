@@ -4,11 +4,16 @@
     <div class="collapse navbar-collapse ourmenu" id="navbarExample">
         <ul class="navbar-nav ml-auto">
 
-
-            <li class="nav-item">
-                <a class="nav-link" href="/">Home</a>
-            </li>
             <% if (user) { %>
+                <li class="nav-item">
+                    <a class="nav-link nav-link2">
+                       Wellcome,  <span class="user_log_color"><%= user.username%></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+
 
                 <li class="nav-item">
                     <a class="nav-link nav-link2" href="/dashboard">Dashboard</a>
@@ -16,13 +21,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">logout</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link nav-link2">
-                        <%= user.username%>
-                    </a>
-                </li>
+
 
                 <% } else { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
