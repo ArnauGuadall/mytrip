@@ -111,7 +111,7 @@ function initialize() {
                   <p><i class='material-icons'>chat</i> " + post["text"] + " </p> \
                   <div class='tag'> \
                   <p class='left'><i class='material-icons'>label</i> " + post["category"] + "  </p> \
-                  <p class='left'><i class='material-icons'>monetization_on</i> " + post["price"] + " €  </p> \
+                  <p class='right'><i class='material-icons'>monetization_on</i> " + post["price"] + " €  </p> \
                   </div>");
                     },
                     error: function(request, status, error) {
