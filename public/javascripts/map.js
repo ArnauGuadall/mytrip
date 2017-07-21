@@ -105,14 +105,14 @@ function initialize() {
                         console.log("pooooooooooooooooost", JSON.parse(post))
                         post = JSON.parse(post)
 
-                        $(".newRecord").append("<div class='col-md-6 col-sm-12 col-xs-12 content-left'> \
+                        $(".newRecord").append("<div class='col-md-6 col-sm-12 col-xs-12 content-left'><div class='format_div'> \
                   <p><i class='material-icons'>event_note</i> " + post["date"] + " </p> \
-                  <p><i class='material-icons'>add_location</i> " + post["location"] + " </p> \
-                  <p><i class='material-icons'>chat</i> " + post["text"] + " </p> \
+                  <p class='bigger'><i class='material-icons'>add_location</i> " + post["location"] + " </p> \
+                  <p class='bigger'><i class='material-icons'>chat</i> " + post["text"] + " </p> \
                   <div class='tag'> \
                   <p class='left'><i class='material-icons'>label</i> " + post["category"] + "  </p> \
                   <p class='right'><i class='material-icons'>monetization_on</i> " + post["price"] + " €  </p> \
-                  </div>");
+                  </div></div>");
                     },
                     error: function(request, status, error) {
                         serviceError();
