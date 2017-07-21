@@ -30,8 +30,8 @@
                     </div>
 
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <input id="address" class="sizeGeoInput" type="" name="address" placeholder="address">
-                        <input id="submit" class="sizeGeoInput" type="button" value="Geocode"><br><br>
+                        <input id="address" class="sizeGeoInput address_input" type="" name="address" placeholder="address">
+                        <input id="submit" class="sizeGeoInput geocode" type="button" value="GEOCODE"><br><br>
                     </div>
 
 
@@ -46,22 +46,24 @@
 
             <% trip.activities.forEach(function(activity) { %>
                 <div class="col-md-6 col-sm-12 col-xs-12 content-left">
-                    <p><i class="material-icons">event_note</i>
-                        <%= activity.date %>
-                    </p>
-                    <p class="bigger"><i class="material-icons">add_location</i>
-                        <%= activity.location %>
-                    </p>
-                    <p class="bigger"><i class="material-icons">chat</i> Text:
-                        <%= activity.text %>
-                    </p>
-
-                    <div class="tag">
-                        <p class="left"><i class="material-icons">label</i>
-                            <%= activity.category %>
+                    <div class="format_div">
+                        <p><i class="material-icons">event_note</i>
+                            <%= activity.date %>
                         </p>
-                        <p class="right"> <i class="material-icons">monetization_on</i>
-                            <%= activity.price %> €</p>
+                        <p class="bigger"><i class="material-icons">add_location</i>
+                            <%= activity.location %>
+                        </p>
+                        <p class="bigger"><i class="material-icons">chat</i> Text:
+                            <%= activity.text %>
+                        </p>
+
+                        <div class="tag">
+                            <p class="left"><i class="material-icons">label</i>
+                                <%= activity.category %>
+                            </p>
+                            <p class="right"> <i class="material-icons">monetization_on</i>
+                                <%= activity.price %> €</p>
+                        </div>
                     </div>
                 </div>
                 <% }); %>

@@ -98,8 +98,8 @@ form label {
 
 .content-left {
     text-align: left;
-    padding: 10px 0;
-    background-color: rgba(192, 192, 192, 0.3);
+    padding: 10px 10px;
+    
 }
 
 .content-left p {
@@ -109,10 +109,11 @@ form label {
 .tag {
     height: 100%;
     width: 100%;
-    background-color: black;
+    background-color: rgba(128, 128, 128, 0.8);
     color: white;
     padding: 5px;
     float: left;
+
 }
 
 .bigger {
@@ -133,14 +134,7 @@ form label {
     }
 }
 
-.tag {
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    color: white;
-    padding: 5px;
-    float: left;
-}
+
 
 .left {
     float: left;
@@ -244,4 +238,28 @@ nav a {
 
 .margin-bottom{
     margin-bottom: 50px;
+}
+
+.geocode{
+    background-color: rgba(79, 176, 86, 0.74);
+}
+
+.geocode:hover{
+    background-color: rgba(40, 215, 51, 0.74);
+}
+
+.address_input{
+    background-color: rgba(255, 255, 255, 0.8)
+}
+
+.login_signup{
+    margin-top:50px;
+}
+
+.format_div{
+    padding: 10px;
+    margin: 10px;
+    
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.3)
 }
