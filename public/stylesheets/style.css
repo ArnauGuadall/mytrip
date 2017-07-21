@@ -1,9 +1,16 @@
 body {
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 a {
     color: #00B7FF;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
 }
 
 #map {
@@ -17,7 +24,7 @@ a {
 }
 
 .navbar-collapse {
-    color: white;
+    color: black;
 }
 
 .trip-list li {
@@ -25,6 +32,11 @@ a {
     padding: 5px;
     display: inline-block;
     list-style: none;
+}
+
+body .navbar-nav>li {
+    padding: 0 1em;
+    list-style-type: none;
 }
 
 .trip-list a,
@@ -71,4 +83,96 @@ form label {
     color: white;
 }
 
+.submit {
+    margin-top: 50px;
+}
 
+.radiobutton {
+    text-align: left;
+}
+
+.sizeGeoInput {
+    width: 100%;
+}
+
+#notes {
+    width: 100%;
+    color: black;
+    float: left;
+}
+
+.content-left {
+    text-align: left;
+    padding: 10px 0;
+    background-color: rgba(192, 192, 192, 0.3);
+}
+
+.content-left p {
+    margin-left: 20px;
+}
+
+.tag {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    float: left;
+}
+
+.bigger {
+    height: 50px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+@media only screen and (max-width: 500px) {
+    .nav-link2 {
+        color: black !important;
+    }
+}
+
+.tag {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    float: left;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.ourmenu {
+    float: right;
+    padding-top: 15px;
+}
+
+.row {
+    margin-right: 0px!important;
+    margin-left: 0px!important;
+}
+
+.paddRight {
+    padding-right: 0px !important;
+}
+
+.space {
+    margin-top: 60px!important;
+}
+
+.navbar {
+    margin-bottom: 0px !important;
+}
