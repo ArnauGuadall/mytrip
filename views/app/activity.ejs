@@ -1,36 +1,87 @@
-<!DOCTYPE html>
-<html>
-  <head>
+<header class="masthead">
 
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    
-    <nav>
-      <a href="/">Index</a> |    
-      <a href="/dashboard">Dashboard</a> |
-      <a href="/activity">Activity</a> |            
-      <a href="/login">Login In</a> |
-      <a href="/logout">Log Out</a>
-    </nav>
+    <div class="header-content-inner">
 
-    
+        <div class="row margin-bottom">
+            <div class="col-md-5">
+                <form>
 
-    <input type="date" id="datePicker"><br><br>
-    
-    <input id="address" type="" name="address" placeholder="address">
-		<input id="submit" type="submit" name="" value="Geocode">
-    
-    <div id="map"></div>
-    <script>
-      // $(document).ready( function() {
-      //     $('#datePicker').val(new Date().toDateInputValue());
-      // });
-    </script>
-  
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW0Xx6VL6pf9pvNc3Qs12m3nnl5soGQAI&libraries=places"async defer></script>    
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/javascripts/map.js"></script>
+                    <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" class="form-control">
+                    </div>
+                    <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                        <label for="price">Price</label>
+                        <input type="number" id="price" class="form-control">
+                    </div>
 
-  </body>
-</html>
+                    <div class="col-md-6 col-sm-12 col-xs-12 radiobutton">
+                        <label for="category">Category</label><br>
+                        <input type="radio" name="category" value="Food" checked="checked"> Food <br>
+                        <input type="radio" name="category" value="Accomodation"> Accomodation<br>
+                        <input type="radio" name="category" value="Transport"> Transport <br>
+                        <input type="radio" name="category" value="Activities"> Activities <br>
+                        <input type="radio" name="category" value="Other"> Other <br>
+                    </div>
+
+                    <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                        <label for="notes">Notes</label> <br>
+                        <textarea rows="5" cols="30" id="notes" name="notes"></textarea><br><br>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <input id="address" class="sizeGeoInput address_input" type="" name="address" placeholder="address">
+                        <input id="submit" class="sizeGeoInput geocode" type="button" value="GEOCODE"><br><br>
+                    </div>
+
+
+                </form>
+
+
+            </div>
+
+            <div class="col-md-7 paddRight">
+                <div id="map"></div>
+            </div>
+
+            <% trip.activities.forEach(function(activity) { %>
+                <div class="col-md-6 col-sm-12 col-xs-12 content-left">
+                    <div class="format_div">
+                        <p><i class="material-icons">event_note</i>
+                            <%= activity.date %>
+                        </p>
+                        <p class="bigger"><i class="material-icons">add_location</i>
+                            <%= activity.location %>
+                        </p>
+                        <p class="bigger"><i class="material-icons">chat</i> Text:
+                            <%= activity.text %>
+                        </p>
+
+                        <div class="tag">
+                            <p class="left"><i class="material-icons">label</i>
+                                <%= activity.category %>
+                            </p>
+                            <p class="right"> <i class="material-icons">monetization_on</i>
+                                <%= activity.price %> €</p>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+
+
+                <div class="newRecord">
+
+                </div>
+
+        </div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBW0Xx6VL6pf9pvNc3Qs12m3nnl5soGQAI&libraries=places" async defer></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/javascripts/map.js"></script>
+        <script>
+        </script>
+    </div>
+
+</header>

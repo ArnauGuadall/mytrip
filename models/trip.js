@@ -1,12 +1,12 @@
 //Trip Model
-const mongoose  = require('mongoose');
-const Schema    = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 const tripSchema = new Schema({
-  username: String,
-  num_days: Number,
-  dayID: [{ type: Schema.Types.ObjectId, ref: 'Day' }],
-  users: [{ type: Schema.Types.ObjectId, ref: 'User' }]
+    tripname: String,
+    num_days: Number,
+    activities: [{ type: Schema.Types.ObjectId, ref: 'Activity' }],
+    users: [{ type: String, ref: 'User' }]
 });
 
 const Trip = mongoose.model("Trip", tripSchema);

@@ -1,8 +1,265 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+}
+
+.navbar-shrink {
+    color: black;
+    background-color: white;
+}
+
+.navbar-collapse {
+    color: black;
+}
+
+.trip-list li {
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+    list-style: none;
+}
+
+body .navbar-nav>li {
+    padding: 0 1em;
+    list-style-type: none;
+}
+
+.trip-list a,
+input {
+    float: left;
+    padding: 13px 38px;
+    border: 1px solid white;
+    color: white;
+    border-radius: 3px;
+    background: transparent;
+}
+
+.trip-list a:hover,
+input:hover,
+input:focus {
+    background: rgba(255, 255, 255, 0.39);
+}
+
+input[type="submit"],
+button {
+    padding: 15px;
+    color: #ffffff;
+    font-size: 17px;
+    border: 1px solid;
+    cursor: pointer;
+    background: rgba(240, 95, 64, 0.52);
+    border-radius: 3px;
+    float: none;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background: #f05f40;
+}
+
+form input,
+form label {
+    float: none;
+    margin: 5px;
+}
+
+.col-xs-12.text-center:nth-child(3) {
+    margin-top: 65px;
+    color: white;
+}
+
+.submit {
+    margin-top: 50px;
+}
+
+.radiobutton {
+    text-align: left;
+}
+
+.sizeGeoInput {
+    width: 100%;
+}
+
+#notes {
+    width: 100%;
+    color: black;
+    float: left;
+}
+
+.content-left {
+    text-align: left;
+    padding: 10px 10px;
+    
+}
+
+.content-left p {
+    margin-left: 20px;
+}
+
+.tag {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.8);
+    color: white;
+    padding: 5px;
+    float: left;
+
+}
+
+.bigger {
+    height: 50px;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+@media only screen and (max-width: 500px) {
+    .nav-link2 {
+        color: black !important;
+    }
+}
+
+
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.ourmenu {
+    float: right;
+    padding-top: 15px;
+}
+
+.row {
+    margin-right: 0px!important;
+    margin-left: 0px!important;
+}
+
+.paddRight {
+    padding-right: 0px !important;
+}
+
+.space {
+    margin-top: 60px!important;
+}
+
+.navbar {
+    margin-bottom: 0px !important;
+}
+
+footer {
+    background-color: #222;
+    border-color: #080808;
+    bottom: 0;
+    margin-bottom: 0;
+    border-width: 1px 0 0;
+    position: fixed !important;
+    width: 100%;
+    /* height: 50px; */
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-inverse .navbar-collapse {
+    border-color: #101010;
+}
+
+.navbar-left {
+    float: left!important;
+}
+
+.navbar-right {
+    float: right!important;
+}
+
+footer {
+    color: white;
+    padding: 5px 5px 0px 5px;
+}
+
+footer .nav-left,
+footer .navbar-right {
+    display: block;
+    color: white;
+}
+
+footer li {
+    display: inline-block;
+    margin: 5px 10px;
+}
+
+footer .container-footer {
+    width: 100%;
+}
+
+span.connected {
+    color: #26e026 !important;
+}
+
+span.disconnected {
+    color: #e02626 !important;
+}
+
+nav a {
+    cursor: pointer;
+}
+
+.user_log_color {
+    color: #F05F40;
+}
+
+.little_padding {
+    padding: 50px 0;
+}
+
+.margin-bottom{
+    margin-bottom: 50px;
+}
+
+.geocode{
+    background-color: rgba(79, 176, 86, 0.74);
+}
+
+.geocode:hover{
+    background-color: rgba(40, 215, 51, 0.74);
+}
+
+.address_input{
+    background-color: rgba(255, 255, 255, 0.8)
+}
+
+.login_signup{
+    margin-top:50px;
+}
+
+.format_div{
+    padding: 10px;
+    margin: 10px;
+    
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.3)
 }

@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <% include ../partials/header %>
-
-  <title>Ironhack Twitter</title>
+    <% include head %>
 </head>
-<body>
-  <div id="container">
-    <img src="/images/twitter-logo.png" 
-         class="header-logo">
 
-    <%- body %>
-  </div>
+<body>
+    <% include menu %>
+
+    <div id="container">
+        <%- body %>
+    </div>
+
+    <% include footer %>
 </body>
+
 </html>

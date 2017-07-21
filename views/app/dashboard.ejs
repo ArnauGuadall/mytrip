@@ -1,19 +1,31 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+<div class="space">
+</div>
+<header class="masthead">
+    <div class="header-content">
+        <div class="header-content-inner">
 
-    <nav>
-      <a href="/">Index</a> |    
-      <a href="/dashboard">Dashboard</a> |
-      <a href="/login">Login In</a> |
-      <a href="/logout">Log Out</a>
-    </nav>
 
-  </body>
-</html>
+            <h2>My Trips</h2>
+
+            <div class="col-xs-12 text-center">
+                <ul class="trip-list">
+                    <% for (var i=0; i<usertrips[0].trips.length; i++) {
+                         var a = usertrips[0].trips.length;
+                         var b = a-i-1;%>
+                        <li>
+                            <a href="/trip/<%= usertrips[0].trips[b]._id %>/activities">
+                                <%= usertrips[0].trips[b].tripname %>
+                            </a>
+                        </li>
+                        <%}%>
+                </ul>
+
+                <form action="/addtrip">
+                    <input type="submit" value="ADD A NEW TRIP" />
+                </form>
+            </div>
+
+            
+        </div>
+    </div>
+</header>

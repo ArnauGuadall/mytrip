@@ -1,0 +1,28 @@
+<div class="space">
+</div>
+<header class="masthead">
+    <div class="header-content">
+        <div class="header-content-inner">
+
+            <form action="/login" method="POST" id="form-container" class="login">
+                <label for="username">Username</label>
+                <input type="text" name="username" placeholder="Your username">
+                <br><br>
+                <label for="password">Password</label>
+                <input type="password" name="password" placeholder="Your password">
+                <br><br>
+                <button>SIGN IN</button>
+
+                <p class="account-message  login_signup">
+                    Don't have an account? <a href="/signup">SIGN UP</a>
+
+                    <% if (typeof(errorMessage) !== "undefined") { %>
+                        <div class="error-message">
+                            <%= errorMessage %>
+                        </div>
+                        <% } %>
+                </p>
+            </form>
+        </div>
+    </div>
+</header>
