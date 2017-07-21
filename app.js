@@ -22,7 +22,8 @@ const dashboard             = require('./routes/dashboard');
 const activity              = require('./routes/activity');
 const app                   = express();
 
-mongoose.connect('mongodb://localhost/mytripdb');
+require("dotenv").config();
+mongoose.connect(process.env.MONGODB_URI);
 
 
 // view engine setup
