@@ -2,6 +2,7 @@
 const express = require('express');
 const Activity = require("../models/activities");
 const Trip = require("../models/trip");
+const User = require("../models/user");
 const router = express.Router();
 var app = express();
 
@@ -21,7 +22,7 @@ router.get('/trip/:id/activities', (req, res, next) => {
                 next(err);
                 return;
             }
-            res.render('app/activity', { trip });
+            res.render('app/activity', { trip, user: req.user });
 
         });
 

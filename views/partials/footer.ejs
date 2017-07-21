@@ -1,37 +1,72 @@
+<section id="contact" class="little_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <h2 class="section-heading">MyTrip, The best travel planner!</h2>
+                <img src="/images/logo_rodo_720.png" width="150px">
 
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2 text-center">
-                    <h2 class="section-heading">Let's Get In Touch!</h2>
-                    <hr class="primary">
-                    <p>Did you like this project? Do you want another one just for you? Get in touch with us!</p>
-                </div>
-                <div class="col-lg-4 offset-lg-2 text-center">
-                    <i class="fa fa-phone fa-3x sr-contact"></i>
-                    <p>123-456-6789</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
-                    <p><a href="mailto:your-email@your-domain.com">coolapp@ironhack.com</a></p>
-                </div>
+                <p>Did you like this project? Do you want another one just for you? Get in touch with us!</p>
             </div>
+
+
         </div>
-    </section>
-    
-        <!-- Bootstrap core JavaScript -->
-    <script src="startbootstrap/vendor/jquery/jquery.min.js"></script>
-    <script src="startbootstrap/vendor/tether/tether.min.js"></script>
-    <script src="startbootstrap/vendor/bootstrap/js/bootstrap.min.js"></script>
+    </div>
+</section>
 
-    <!-- Plugin JavaScript -->
-    <script src="startbootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="startbootstrap/vendor/scrollreveal/scrollreveal.min.js"></script>
-    <script src="startbootstrap/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
-    <!-- Custom scripts for this template -->
-    <script src="startbootstrap/js/creative.min.js"></script>
+
+
+<!-- Bootstrap core JavaScript -->
+<script src="startbootstrap/vendor/jquery/jquery.min.js"></script>
+<script src="startbootstrap/vendor/tether/tether.min.js"></script>
+<script src="startbootstrap/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="startbootstrap/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="startbootstrap/vendor/scrollreveal/scrollreveal.min.js"></script>
+<script src="startbootstrap/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="startbootstrap/js/creative.min.js"></script>
 
 </body>
 
-</html>
+<footer id="footer-trip">
+    <div class="container-footer">
+        <div class="col-xs-12">
+            <ul class="navbar-left">
+                <li>
+
+                    <span>© 2017 MyTrip, INC</span>
+
+                </li>
+            </ul>
+            <ul class="navbar-right">
+                <li>
+
+                    <span>Coded by <a href="https://github.com/ArnauGuadall" target="_blank">Arnau</a> and <a href="https://github.com/albertserradell" target="_blank">Albert</a></span>
+
+                </li>
+                <li>
+                    <span>The calçots team</span>
+
+                </li>
+                <% if (user) { %>
+                    <li>
+
+
+                        <span>User Status = <span class="connected">Connected</span>
+
+                    </li>
+                    <% } else { %>
+                        <li>
+
+
+                            <span>User Status = <span class="disconnected">Disconected</span></span>
+
+                        </li>
+                        <% } %>
+            </ul>
+        </div>
+    </div>
+</footer>

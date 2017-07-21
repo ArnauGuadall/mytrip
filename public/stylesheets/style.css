@@ -104,14 +104,14 @@ form label {
 .content-left {
     text-align: left;
     padding: 10px 0;
-    background-color:rgba(192,192,192,0.3);
+    background-color: rgba(192, 192, 192, 0.3);
 }
 
 .content-left p {
     margin-left: 20px;
 }
 
-.tag{
+.tag {
     height: 100%;
     width: 100%;
     background-color: black;
@@ -120,14 +120,15 @@ form label {
     float: left;
 }
 
-.bigger{
+.bigger {
     height: 50px;
 }
 
-.left{
+.left {
     float: left;
 }
-.right{
+
+.right {
     float: right;
 }
 
@@ -154,24 +155,94 @@ form label {
     float: right;
 }
 
-.ourmenu{
+.ourmenu {
     float: right;
-
+    padding-top: 15px;
 }
 
-.row{
+.row {
     margin-right: 0px!important;
     margin-left: 0px!important;
 }
 
-.paddRight{
+.paddRight {
     padding-right: 0px !important;
 }
 
-.space{
+.space {
     margin-top: 60px!important;
 }
 
-.navbar{
+.navbar {
     margin-bottom: 0px !important;
+}
+
+footer {
+    background-color: #222;
+    border-color: #080808;
+    bottom: 0;
+    margin-bottom: 0;
+    border-width: 1px 0 0;
+    position: fixed !important;
+    width: 100%;
+    /* height: 50px; */
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-inverse .navbar-collapse {
+    border-color: #101010;
+}
+
+.navbar-left {
+    float: left!important;
+}
+
+.navbar-right {
+    float: right!important;
+}
+
+footer {
+    color: white;
+    padding: 5px 5px 0px 5px;
+}
+
+footer .nav-left,
+footer .navbar-right {
+    display: block;
+    color: white;
+}
+
+footer li {
+    display: inline-block;
+    margin: 5px 10px;
+}
+
+footer .container-footer {
+    width: 100%;
+}
+
+span.connected {
+    color: #26e026 !important;
+}
+
+span.disconnected {
+    color: #e02626 !important;
+}
+
+nav a {
+    cursor: pointer;
+}
+
+.user_log_color {
+    color: #F05F40;
+}
+
+.little_padding {
+    padding: 50px 0;
 }
