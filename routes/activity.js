@@ -2,8 +2,8 @@
 const express = require('express');
 const Activity = require("../models/activities");
 const Trip = require("../models/trip");
+const User = require("../models/user");
 const router = express.Router();
-const User = require("../models/user")
 var app = express();
 
 
